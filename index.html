@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
@@ -11,15 +11,21 @@
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
+        body {
+            margin: 0;
+        }
         #map {
-            width: 1039px;
-            height: 819px;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            padding-right: 0;
         }
         </style>
-        <title></title>
+        <title>Denver Senior Residents and Library Access · 2020 GIS study</title>
     </head>
     <body>
-        <div id="map">
+        <div id="map" role="region" aria-label="Denver Senior Residents and Library Access · 2020 GIS study">
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
@@ -59,10 +65,10 @@
         }
         map.createPane('pane_OSMStandard_0');
         map.getPane('pane_OSMStandard_0').style.zIndex = 400;
-        var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        var layer_OSMStandard_0 = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             pane: 'pane_OSMStandard_0',
             opacity: 1.0,
-            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>',
             minZoom: 1,
             maxZoom: 28,
             minNativeZoom: 0,
